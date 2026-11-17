@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="Designer canvas with a proactive AI suggestion">
+  <rect width="640" height="480" fill="#f6f7f9"/>
+  <rect x="28" y="28" width="584" height="424" rx="10" fill="#fff" stroke="#e2e4e8"/>
+  <rect x="28" y="28" width="584" height="42" rx="10" fill="#f0f2f5"/>
+  <rect x="28" y="58" width="584" height="12" fill="#f0f2f5"/>
+  <circle cx="52" cy="49" r="5" fill="#d0d4db"/>
+  <circle cx="70" cy="49" r="5" fill="#d0d4db"/>
+  <circle cx="88" cy="49" r="5" fill="#d0d4db"/>
+  <rect x="56" y="96" width="168" height="92" rx="8" fill="#eef3fb" stroke="#c9d7ee"/>
+  <rect x="72" y="114" width="110" height="10" rx="5" fill="#9bb0d4"/>
+  <rect x="72" y="134" width="136" height="8" rx="4" fill="#c5d3ea"/>
+  <rect x="72" y="152" width="88" height="8" rx="4" fill="#c5d3ea"/>
+  <rect x="248" y="132" width="168" height="92" rx="8" fill="#eef3fb" stroke="#c9d7ee"/>
+  <rect x="264" y="150" width="110" height="10" rx="5" fill="#9bb0d4"/>
+  <rect x="264" y="170" width="120" height="8" rx="4" fill="#c5d3ea"/>
+  <rect x="264" y="188" width="76" height="8" rx="4" fill="#c5d3ea"/>
+  <path d="M224 142h24" stroke="#9bb0d4" stroke-width="2"/>
+  <circle cx="224" cy="142" r="3" fill="#9bb0d4"/>
+  <circle cx="248" cy="142" r="3" fill="#9bb0d4"/>
+  <rect x="150" y="268" width="200" height="108" rx="8" fill="#fff" stroke="#d8dde6"/>
+  <rect x="166" y="286" width="96" height="8" rx="4" fill="#c9ced6"/>
+  <rect x="166" y="306" width="168" height="8" rx="4" fill="#e2e6ec"/>
+  <rect x="166" y="324" width="148" height="8" rx="4" fill="#e2e6ec"/>
+  <rect x="166" y="342" width="112" height="8" rx="4" fill="#e2e6ec"/>
+  <rect x="360" y="214" width="220" height="148" rx="10" fill="#0b57d0"/>
+  <rect x="376" y="232" width="92" height="8" rx="4" fill="#9cbcf5"/>
+  <rect x="376" y="256" width="176" height="9" rx="4" fill="#fff"/>
+  <rect x="376" y="276" width="188" height="9" rx="4" fill="#d6e4ff"/>
+  <rect x="376" y="296" width="160" height="9" rx="4" fill="#d6e4ff"/>
+  <rect x="376" y="328" width="64" height="18" rx="9" fill="#fff"/>
+  <rect x="448" y="328" width="64" height="18" rx="9" fill="#3d75de"/>
+</svg>

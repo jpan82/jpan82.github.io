@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jingwen Pan</title>
+  <style>
+    :root {
+      --text: #1f1f1f;
+      --muted: #5f6368;
+      --link: #0b57d0;
+      --link-hover: #0842a0;
+      --rule: #e3e3e3;
+      --surface: #fff;
+      --card: #fff;
+      --chip-blue: #d3e3fd;
+      --chip-blue-ink: #041e49;
+      --chip-green: #c4eed0;
+      --chip-green-ink: #0a3818;
+      --chip-peach: #f9dec9;
+      --chip-peach-ink: #4a2800;
+      --chip-purple: #e6d5f7;
+      --chip-purple-ink: #3c1e5c;
+      --chip-teal: #c4e7e4;
+      --chip-teal-ink: #0b3d3a;
+      --chip-pink: #f8d3e0;
+      --chip-pink-ink: #5c1030;
+      --chip-yellow: #fde293;
+      --chip-yellow-ink: #4a3b00;
+      --chip-slate: #d3e0ea;
+      --chip-slate-ink: #17364a;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-font-smoothing: antialiased; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font: 17px/1.65 Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: var(--surface);
+    }
+    main {
+      max-width: 90rem;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 5rem;
+    }
+    header {
+      padding: 1.5rem 0 0.35rem;
+    }
+    h1 {
+      margin: 0 0 0.4rem;
+      font-size: 3.25rem;
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      line-height: 1.15;
+    }
+    .meta, .links, .year { color: var(--muted); font-size: 1.05rem; }
+    .links { margin: 0.4rem 0 2.4rem; }
+    .links a { margin-right: 0.9rem; }
+    a {
+      color: var(--link);
+      text-decoration: none;
+      text-underline-offset: 0.18em;
+    }
+    a:hover { color: var(--link-hover); text-decoration: underline; }
+    header + h2 { margin-top: 2rem; }
+    h2 {
+      margin: 2.75rem 0 1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0;
+      color: var(--muted);
+    }
+    p { margin: 0 0 1rem; font-size: 1.15rem; color: #3c4043; }
+    p strong { color: var(--text); font-weight: 500; }
+    .project {
+      display: grid;
+      grid-template-columns: 17.5rem 1fr;
+      gap: 1.25rem 1.75rem;
+      align-items: start;
+      margin: 0 0 1.25rem;
+      padding: 1.25rem;
+      background: var(--card);
+      border: 1px solid #000000;
+      border-radius: 1.25rem;
+    }
+    .project.compact { padding: 0.9rem; gap: 1.25rem 1.7rem; }
+    .project .thumb {
+      width: 100%;
+    }
+    .project img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+      background: #fff;
+      border-radius: 0.75rem;
+    }
+    .project h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      line-height: 1.35;
+    }
+    @media (max-width: 44rem) {
+      .project { grid-template-columns: 1fr; }
+      .project .thumb { max-width: 22rem; }
+      h1 { font-size: 2.4rem; }
+    }
+    .project .labels {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.4rem;
+      margin: 0 0 0 0.45rem;
+      vertical-align: middle;
+    }
+    .project .status,
+    .project .role {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.2rem 0.7rem;
+      border: 1px solid #000000;
+      border-radius: 0.5rem;
+      background: #fff;
+      color: #3c4043;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      line-height: 1.3;
+    }
+    .project .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.7rem 0 0.55rem;
+      font-size: 0.78rem;
+    }
+    .project .skill {
+      display: inline-block;
+      padding: 0.18rem 0.7rem;
+      border-radius: 999px;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+    .skill-mixed { color: var(--chip-blue-ink); background: var(--chip-blue); }
+    .skill-proactive { color: var(--chip-green-ink); background: var(--chip-green); }
+    .skill-design { color: var(--chip-peach-ink); background: var(--chip-peach); }
+    .skill-woz { color: var(--chip-purple-ink); background: var(--chip-purple); }
+    .skill-analogical { color: var(--chip-teal-ink); background: var(--chip-teal); }
+    .skill-genai { color: var(--chip-pink-ink); background: var(--chip-pink); }
+    .skill-explainable { color: var(--chip-yellow-ink); background: var(--chip-yellow); }
+    .skill-nav { color: var(--chip-slate-ink); background: var(--chip-slate); }
+    .project .authors,
+    .project .submission,
+    .project .content {
+      font-size: 0.95rem;
+    }
+    .project .authors { margin: 0.15rem 0 0; color: #3c4043; }
+    .project .authors strong { color: var(--text); font-weight: 500; }
+    .project .submission { margin: 0.15rem 0 0; color: var(--muted); }
+    .project .content {
+      margin: 0.85rem 0 0;
+      padding: 0.1rem 0 0.1rem 0.85rem;
+      border-left: 3px solid #1f1f1f;
+      color: #3c4043;
+    }
+    .project .note {
+      margin: 0.45rem 0 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+    .project p { margin: 0.35rem 0 0.25rem; }
+    .project .out a { margin-right: 0.75rem; font-size: 0.92rem; }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" />
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Jingwen Pan</h1>
+      <div class="meta">
+        ECE @ CMU, CS & DS @ UW-Madison<br>
+      </div>
+    </header>
+
+    <h2>About Me</h2>
+    <p>
+      Hello! I am an M.S. student in Electrical and Computer Engineering with a <a href="https://www.ece.cmu.edu/academics/ms-ece/concentrations.html">concentration</a> in AI/ML Systems at Carnegie Mellon University.
+      I received my B.S. in Computer Sciences and Data Science from the University of Wisconsin-Madison.
+    
+      I currently work on research projects advised by <a href="https://nikmartelaro.com/">Professor Nikolas Martelaro</a> at Carnegie Mellon University and <a href="https://spdow.ucsd.edu/">Professor Steven Dow</a> at the University of California, San Diego.
+      Previously, I worked on a project advised by <a href="http://kittur.org/">Professor Aniket Kittur</a> at Carnegie Mellon University.
+
+      As an undergraduate, I worked with <a href="https://jacob.thebault-spieker.com/">Professor Jacob Thebault-Spieker</a> at the University of Wisconsin-Madison.
+    </p>
+    <p>
+      My research interests are <strong>Human-Computer Interaction</strong> and <strong>Human-AI Interaction</strong>. 
+      I build mixed-initiative AI systems that infer people's processes and intentions from their activities (e.g., design), and use this understanding to decide when to intervene and what support to offer, while minimizing disruption and preserving people's agency and ownership of their thinking.
+
+      I am also interested in incorporating human expertise (e.g., tacit knowledge) into AI systems and developing personalized AI assistance that adapts to people's individual needs, preferences, and working styles.    </p>
+
+    <p>
+      Outside of research, I love weightlifting and cooking.
+    </p>
+    <h2>Research Projects</h2>
+    <article class="project compact">
+      <div class="thumb">
+        <img src="images/Generated Image November 17, 2026 - 12_51AM.png" alt="Canvas with a proactive AI suggestion card" />
+      </div>
+      <div>
+        <h3>Investigating How Designers Perceive User Modeling in Proactive AI Assistants <span class="labels"><span class="role">First author</span></span></h3>
+        <div class="skills">
+          <span class="skill skill-mixed">Mixed-Initiative Interaction</span>
+          <span class="skill skill-proactive">Proactive AI</span>
+          <span class="skill skill-design">Design</span>
+        </div>
+        <div class="submission">In preparation for submission to the 1st Human-AI Interaction Conference (HAIC 27)</div>
+        <div class="content">
+          Step 1 (Done!): Build two different AI pipelines for the same goal: observing designers' activities, inferring their intentions, and identifying their current work phases (e.g., divergence, convergence, or getting stuck). One pipeline incorporates behavioral modeling technology from the HCI community. The other uses model's own knowledge to infer intentions and phases in the zero-shot setting. Which one do you think is better?<br>
+          Step 2: Design user study...
+        </div>
+        <div class="content">
+        </div>     
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="thumb">
+        <img src="images/woz_proactive.png" alt="Canvas with a proactive AI suggestion card" />
+      </div>
+      <div>
+        <h3>Investigating How Designers Perceive the Timing and Content of Proactive AI-generated Feedback <span class="labels"><span class="role">Co-second author</span></span></h3>
+        <div class="skills">
+          <span class="skill skill-woz">Wizard-of-Oz</span>
+          <span class="skill skill-mixed">Mixed-Initiative Interaction</span>
+          <span class="skill skill-proactive">Proactive AI</span>
+          <span class="skill skill-design">Design</span>
+        </div>
+        <div class="authors">Howard Ziyu Han, Sirui Tao<sup>*</sup>, <strong>Jingwen Pan</strong><sup>*</sup>, Seung Heon Song<sup>*</sup>, Steven P. Dow, Nikolas Martelaro</div>
+        <div class="note">* indicates equal contribution</div>
+        <div class="submission">Under review at the ACM Conference on
+          Human Factors in Computing Systems (CHI '27)</div>
+        <div class="content">Imagine you are working to solve a design problem. An AI assistant watches your work and proactively provides feedback to help you (yay!). When should the assistant intervene, and what feedback should it provide? We created a Wizard-of-Oz system where designers received in-situ, AI-generated perspectives, mediated by a human wizard. In a study with N=20 designers, participants rated each intervention for timeliness and usefulness. Our study offers implications for future autonomous proactive design support.
+          
+        </div>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="thumb">
+        <img src="images/analogy.png" alt="Canvas with a proactive AI suggestion card" />
+      </div>
+      <div>
+        <h3>Visualizing Analogical Innovation with Generative AI </h3>
+        <div class="skills">
+          <span class="skill skill-analogical">Analogical Reasoning</span>
+          <span class="skill skill-genai">Generative AI</span>
+        </div>
+        <div class="content">Imagine you are on a team designing laundry solution that uses less water. You draw analogical inspiration from mycelium foams that absorb oil films in polluted water, and propose a waterless cleaning patch that uses mycelium to lift and isolate dirt through physical adsorption. 
+          This project builds a system that generates images that illustrate these analogical innovation ideas through image scaffolding and that inspire new ideas.
+        </div>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="thumb">
+        <img src="images/cscw.png" alt="Project thumbnail" />
+      </div>
+      <div>
+        <h3>Understanding User Perceptions of Safety Information in Navigational Tools</h3>
+        <div class="skills">
+          <span class="skill skill-explainable">Explainable Interfaces</span>
+          <span class="skill skill-nav">Navigation Systems</span>
+        </div>
+        <div class="submission">Rejected by the ACM Conference on Computer-Supported Cooperative Work and Social Computing (CSCW)</div>
+        <div class="note">Note: Inspired by my colleague <a href="https://dylantao.github.io/">Sirui</a>, I include the rejected paper.</div>
+        <div class="content">Imagine you open your phone's navigation app to find a route to your destination. The app shows you routes with safety information and explanations.
+        How do you perceive the safety information, and how does it influence your route choice? How do different explanations influence your perception? We investigated these questions through a mixed-methods study with 31 participants and provided insights for future navigation systems.
+          
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
